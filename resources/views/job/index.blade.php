@@ -16,13 +16,16 @@
             </div>
             <div>
                 <div class="mb-1 font-semibold">Experience</div>
+                <x-radio-group name="experience" :experiences="{{Jobse::$experience}}"></x-radio-group>
+                
+
             </div>
             <div>4</div>
        </div>
        </form>
     </x-card>
 
-
+   
     @foreach ($jobs as $job )
     <x-job-card class="mb-4" :job="$job">     
     <div>
