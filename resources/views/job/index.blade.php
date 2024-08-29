@@ -1,5 +1,5 @@
 <x-layout>
-    
+    <x-bread-crumbs class="mb-4" :links="['Jobs'=>route('jobs.index')]"/>
     <x-card class="mb-4 text-sm">
        <form id="fitering-form" action="{{route('jobs.index')}}" method="GET">
         <div class="mb-4 grid grid-cols-2 gap-4">
@@ -16,12 +16,11 @@
             </div>
             <div>
                 <div class="mb-1 font-semibold">Experience</div>
-                <x-radio-group name="experience" :experiences="{{Jobse::$experience}}"></x-radio-group>
-                
-
+    
             </div>
             <div>4</div>
        </div>
+            <x-button class="w-full ">Filter</x-button>
        </form>
     </x-card>
 
