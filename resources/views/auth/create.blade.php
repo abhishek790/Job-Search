@@ -4,12 +4,12 @@
         <form action="{{route('auth.store')}}" method="POST">
             @csrf
             <div class="mb-8">
-                <label for="email" class="mb-2 block text-sm font-medium text-slate-900">E-mail</label>
+                <x-label for="email" :required="true" class="mb-2 block text-sm font-medium text-slate-900">E-mail</x-label>
                 <x-text-input name="email" id="email" />
             </div>
 
             <div class="mb-8">
-                <label for="password" class="mb-2 block text-sm font-medium text-slate-900">Password</label>
+                <x-label for="password" :required="true" class="mb-2 block text-sm font-medium text-slate-900">Password</x-label>
                 <x-text-input name="password" id="password" type="password" />
             </div>
 
@@ -17,7 +17,7 @@
                 <div>
                     <div class="flex items-center space-x-2">
                         <input type="checkbox" name="remember" class="rounded-sm border border-slate-400">
-                        <label for="rememberme">Remember Me</label>
+                        <x-label for="rememberme" >Remember Me</x-label>
                     </div>
                 </div>
                 <div>

@@ -30,7 +30,7 @@ class JobApplicationController extends Controller
             'expected_salary' => $validatedData['expected_salary'],
             'cv_path' => $path
         ]);
-        return redirect()->route('jobs.show')->with('success', 'Job Application submitted');
+        return redirect()->route('jobs.show', ['job' => $job->id])->with('success', 'Job Application submitted');
     }
 
 

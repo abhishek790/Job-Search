@@ -29,6 +29,9 @@ return new class extends Migration {
      */
     public function down(): void
     {
+        Schema::table('jobse', function (Blueprint $table) {
+            $table->dropForeignIdFor(Employer::class);
+        });
         Schema::dropIfExists('employers');
     }
 };

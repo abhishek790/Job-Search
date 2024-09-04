@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class JobApplication extends Model
 {
     use HasFactory;
+    protected $fillable = ['user_id', 'expected_salary', 'cv_path'];
 }

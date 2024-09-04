@@ -23,7 +23,7 @@ class Jobse extends Model
 
     public function jobApplications(): HasMany
     {
-        return $this->hasMany(JobApplicaton::class);
+        return $this->hasMany(JobApplication::class);
     }
 
     public function scopeFilter(Builder|QueryBuilder $query, array $filters): Builder|QueryBuilder
@@ -40,7 +40,7 @@ class Jobse extends Model
         })->when($filters['min_salary'] ?? null, function ($query, $minSalary) {
             $query->where('salary', '>=', $minSalary);
         })->when($filters['max_salary'] ?? null, function ($query, $maxSalary) {
-            $query->where('salary', '>=', $maxSalary);
+            $query->where('salary', '<=', $maxSalary);
         })->when($filters['experience'] ?? null, function ($query, $experience) {
             $query->where('experience', $experience);
         })->when($filters['category'] ?? null, function ($query, $category) {
