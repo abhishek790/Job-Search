@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Jobse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class JobApplicationController extends Controller
 {
 
     public function create(Jobse $job)
     {
+        Gate::authorize('apply', $job);
         return view('job_applications.create', ['job' => $job]);
     }
 
